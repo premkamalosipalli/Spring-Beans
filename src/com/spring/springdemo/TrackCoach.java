@@ -1,15 +1,28 @@
 package com.spring.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TrackCoach implements Coach {
 
+	//Field Injection using 
+	@Autowired
 	private FortuneService fortuneService;
 	
-	public TrackCoach(FortuneService theFortuneService) {
+	//using AutoWired Annotation for dependency injection
+	//no need of auto wired annotation if there is only one constructor in the implementation class
+	//@Autowired
+	/*public TrackCoach(FortuneService theFortuneService) {
 		fortuneService=theFortuneService;
-	}
+	}*/
+	
+	//Setter Injection for Auto Wired Annotation 
+	/*@Autowired
+	public void setFortuneService(FortuneService theFortuneService) {
+		fortuneService=theFortuneService;
+	}*/
+	
 	@Override
 	public String getDailyWorkout() {
 		// TODO Auto-generated method stub
